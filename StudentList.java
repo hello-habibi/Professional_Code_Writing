@@ -87,19 +87,8 @@ public class StudentList {
 			System.out.println(constantsLitarals.LOADING_MESSAGE);
 				String D = readFile("students.txt");
 				char a[] = D.toCharArray();
-				boolean in_word = false;
-				int count = 0;
-				for (char c : a) {
-					if (c == ' ') {
-						if (!in_word) {
-							count++;
-							in_word = true;
-						} else {
-							in_word = false;
-						}
-					}
-				}
-				System.out.println(count + " word(s) found " + a.length);
+				String words[] = D.split(",");
+				System.out.println(words.length + " word(s) found " + a.length);
 
 			System.out.println(constantsLitarals.LOADED_MESSAGE);
 		}
