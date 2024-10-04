@@ -73,14 +73,11 @@ public class StudentList {
 
 					String r = readFile("students.txt");
 					String i[] = r.split(",");
-					boolean done = false;
-					String t = args[0].substring(1);
-					for (int idx = 0; idx < i.length && !done; idx++) 
-					{
-						if (i[idx].equals(t)) 
-						{
+					String name = args[0].substring(1);
+					for(String nme:i){
+						if(nme.equals(name)){
 							System.out.println(constantsLitarals.FOUND_MESSAGE);
-							done = true;
+							break;
 						}
 					}
 				System.out.println(constantsLitarals.LOADED_MESSAGE);
