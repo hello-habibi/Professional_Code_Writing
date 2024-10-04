@@ -4,6 +4,7 @@ import java.util.*;
 
 public class StudentList {
 	public static void main(String[] args) {
+		Constants constantsLitarals = new Constants();
 
 		boolean isValidArg = true;
 		// Check arguments
@@ -12,7 +13,7 @@ public class StudentList {
 			isValidArg = false;
 			if (args[0].equals("a")) 
 			{
-				System.out.println("Loading data ...");
+				System.out.println(constantsLitarals.LOADING_MESSAGE);
 				try 
 				{
 					BufferedReader fileReader = new BufferedReader(
@@ -25,11 +26,11 @@ public class StudentList {
 					}
 				} catch (Exception e) {
 				}
-				System.out.println("Data Loaded.");
+				System.out.println(constantsLitarals.LOADED_MESSAGE);
 			}
 			else if (args[0].equals("r")) 
 			{
-				System.out.println("Loading data ...");
+				System.out.println(constantsLitarals.LOADING_MESSAGE);
 				try 
 				{
 					BufferedReader s = new BufferedReader(
@@ -56,7 +57,7 @@ public class StudentList {
 							new FileWriter("students.txt", true));
 					String readedString = args[0].substring(1);
 					Date date = new Date();
-					String dateFormation = "dd/mm/yyyy-hh:mm:ss a";
+					String dateFormation = constantsLitarals.DATE_FORMATE;
 					DateFormat dateFormat = new SimpleDateFormat(dateFormation);
 					String dateString = dateFormat.format(date);
 					fileWriter.write(", " + readedString + "\nList last updated on " + dateString);
@@ -66,11 +67,11 @@ public class StudentList {
 				{
 				}
 
-				System.out.println("Data Loaded.");
+				System.out.println(constantsLitarals.LOADED_MESSAGE);
 			} 
 			else if (args[0].contains("?")) 
 			{
-				System.out.println("Loading data ...");
+				System.out.println(constantsLitarals.LOADING_MESSAGE);
 				try 
 				{
 					BufferedReader s = new BufferedReader(
@@ -84,7 +85,7 @@ public class StudentList {
 					{
 						if (i[idx].equals(t)) 
 						{
-							System.out.println("We found it!");
+							System.out.println(constantsLitarals.FOUND_MESSAGE);
 							done = true;
 						}
 					}
@@ -92,11 +93,11 @@ public class StudentList {
 				catch (Exception e) 
 				{
 				}
-				System.out.println("Data Loaded.");
+				System.out.println(constantsLitarals.LOADED_MESSAGE);
 			} 
 			else if (args[0].contains("c")) 
 			{
-			System.out.println("Loading data ...");
+			System.out.println(constantsLitarals.LOADING_MESSAGE);
 			try 
 			{
 				BufferedReader s = new BufferedReader(
@@ -121,7 +122,7 @@ public class StudentList {
 			catch (Exception e) 
 			{
 			}
-			System.out.println("Data Loaded.");
+			System.out.println(constantsLitarals.LOADED_MESSAGE);
 		}
 		else
 		{
